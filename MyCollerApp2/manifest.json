@@ -101,7 +101,7 @@
         },
         "NativeObj":{
         	"description": "原生对象"
-        }
+        },"Share":{},"OAuth":{},"Device":{}
 	},
 	"plus": {
 		"splashscreen": {
@@ -214,11 +214,49 @@
 					"tab-webview-subpage-contact.html"
 				],
 				"priority": 0
+			},
+			"tab-webview-subpage-setting.html": {
+				"resources": [
+					"login.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"login.html": {
+				"resources": [
+					"css/mui.min.css",
+					"js/app.js",
+					"images/sinaweibo.png",
+					"css/style.css",
+					"images/weixin.png",
+					"images/qq.png",
+					"js/mui.enterfocus.js"
+				],
+				"refer": [
+					"reg.html",
+					"index.html",
+					"forget_password.html"
+				],
+				"priority": 0
+			},
+			"tab-webview-subpage-contact.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"reg.html": {
+				"resources": [
+					"css/mui.min.css",
+					"css/style.css"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
-				"login.html",
 				"js/mui.js",
 				"css/mui.css",
 				"js/jquery.js"

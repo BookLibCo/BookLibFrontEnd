@@ -1,23 +1,61 @@
 {
-	"tab-webview-subpage-about.html": {
-		"resources": [
-			"images/shuijiao.jpg",
-			"images/muwu.png",
-			"css/mui.min.css"
-		]
-	},
-	"index.html": {
-		"resources": [
-			"tab-webview-subpage-about.html",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"tab-webview-subpage-about.html",
-			"tab-webview-subpage-setting.html",
-			"tab-webview-subpage-chat.html",
-			"tab-webview-subpage-contact.html"
-		]
-	}
+  "tab-webview-subpage-about.html": {
+    "resources": [
+      "images/shuijiao.jpg",
+      "images/muwu.png",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "index.html": {
+    "resources": [
+      "tab-webview-subpage-about.html",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "tab-webview-subpage-about.html",
+      "tab-webview-subpage-setting.html",
+      "tab-webview-subpage-chat.html",
+      "tab-webview-subpage-contact.html"
+    ]
+  },
+  "tab-webview-subpage-setting.html": {
+    "resources": [
+      "login.html"
+    ],
+    "refer": [
+      "login.html"
+    ]
+  },
+  "login.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/app.js",
+      "images/sinaweibo.png",
+      "css/style.css",
+      "images/weixin.png",
+      "images/qq.png",
+      "js/mui.enterfocus.js"
+    ],
+    "refer": [
+      "reg.html",
+      "index.html",
+      "forget_password.html"
+    ]
+  },
+  "tab-webview-subpage-contact.html": {
+    "resources": [
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "reg.html": {
+    "resources": [
+      "css/mui.min.css",
+      "css/style.css"
+    ],
+    "refer": []
+  }
 }
