@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>我的资料</title>
+		<title>人脉详情</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -56,16 +56,20 @@
 	</head>
 
 	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.back(-1)"></a>
+			<h1 class="mui-title">人脉详情</h1>
+		</header>
 		<div class="mui-content">
 				<ul class="mui-table-view">
 					<li class="mui-table-view-cell">
 						<a class="mui-navigate-right" href="">
-							我的动态<span class="mui-listspan"><%=myStates%></span>
+							我的动态<span class="mui-listspan"><%myStates%></span>
 						</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a class="mui-navigate-right" href="">
-							当月访客<span class="mui-listspan"><%=visitNum%></span>
+							当月访客<span class="mui-listspan"><%visitNum%></span>
 						</a>
 					</li>
 					<li class="mui-table-view-cell">
@@ -75,18 +79,24 @@
 					</li>
 					<li class="mui-table-view-cell">
 						<a class="" href="">
-							自我介绍<span class="mui-listspan">编辑</span>
+							自我介绍<span class="mui-listspan"></span>
 						</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a class="" href="">
-							标签<span class="mui-listspan">编辑</span>
+							标签<span class="mui-listspan"></span>
 						</a>
 					</li>
 				</ul>
 				<div class="mui-content-padded">
 					<div class="mui-btn mui-btn-primary">
-						java <%perTag%>
+						java  <%=perTag%>
+                              <!--
+                              	作者：739553005@qq.com
+                              	时间：2017-05-09
+                              	描述：
+                              	<%perTag%> list
+                              -->
 					</div>
 					<div class="mui-btn mui-btn-primary">
 						PHP
@@ -107,27 +117,27 @@
 				<ul class="mui-table-view">
 					<li class="mui-table-view-cell">
 						<a class="mui-navigate-right" href="">
-							专栏<span class="mui-listspan">编辑</span>
+							最新需求<span class="mui-listspan"></span>
 						</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a class="" href="">
-							<p>最近一直在看Bootstrap，不得不说其中有很多学习的地方。</p>
+							<p><%newReqIntro%></p>
 						</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a class="mui-navigate-right" href="">
-							工作经历<span class="mui-listspan">编辑</span>
+							工作经历<span class="mui-listspan"></span>
 						</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a class="mui-navigate-right" href="">
-							教育经历<span class="mui-listspan">编辑</span>
+							教育经历<span class="mui-listspan"></span>
 						</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a class="mui-navigate-right" href="">
-							其他<span class="mui-listspan">编辑</span>
+							其他<span class="mui-listspan"></span>
 						</a>
 					</li>
 					<li class="mui-table-view-cell">
@@ -142,10 +152,32 @@
 					</li>
 				</ul>
 		</div>
+		<div class="mui-content-padded">
+				<button id='zhaohu' class="mui-btn mui-btn-block mui-btn-primary">打招呼</button>
+				</div>
+			</div>
 		<script src="js/mui.min.js"></script>
 	</body>
 	<script>
 			mui.init();
 			var mainPage = null;
+			
+			mui("#zhaohu")[0].addEventListener('tap', function(event) {
+				mui.openWindow({
+					url: 'im-chat.html',
+					id: 'zhaohu',
+					preload: true,
+					show: {
+						aniShow: 'pop-in'
+					},
+					styles: {
+						popGesture: 'hide'
+					},
+					waiting: {
+						autoShow: false
+					}
+				});
+			});
+			
 		</script>
 </html>

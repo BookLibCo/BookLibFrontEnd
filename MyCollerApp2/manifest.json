@@ -214,11 +214,66 @@
 					"tab-webview-subpage-contact.html"
 				],
 				"priority": 0
+			},
+			"tab-webview-subpage-setting.html": {
+				"resources": [
+					"css/mui.min.css",
+					"login.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"tab-webview-subpage-chat.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [
+					"myinformation.html"
+				],
+				"priority": 0
+			},
+			"myinformation.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [
+					"im-chat.html"
+				],
+				"priority": 0
+			},
+			"login.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [
+					"reg.html"
+				],
+				"priority": 0
+			},
+			"reg.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"im-chat.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"tab-webview-subpage-contact.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
-				"login.html",
 				"js/mui.js",
 				"css/mui.css",
 				"js/jquery.js"

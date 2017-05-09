@@ -57,13 +57,13 @@
 							<div class="oa-contact-avatar mui-table-cell">
 								<img src="http://placehold.it/60x60" />
 							</div>
-							<div class="oa-contact-content mui-table-cell">
+							<div  id='renmai' class="oa-contact-content mui-table-cell">
 								<div class="mui-clearfix">
-									<h4 class="oa-contact-name">叶文洁</h4>
-									<span class="oa-contact-position mui-h6">董事长</span>
+									<h4 class="oa-contact-name">叶文洁<%FriendName%></h4>
+									<span class="oa-contact-position mui-h6">董事长<%FriendPosition%></span>
 								</div>
 								<p class="oa-contact-email mui-h6">
-									yewenjie@sina.com
+									yewenjie@sina.com<%FirendTel%>
 								</p>
 							</div>
 						</div>
@@ -149,5 +149,21 @@
 		mui.init({
 			swipeBack:true //启用右滑关闭功能
 		});
+	mui("#renmai")[0].addEventListener('tap', function(event) {
+				mui.openWindow({
+					url: 'myinformation.html',
+					id: 'renmai',
+					preload: true,
+					show: {
+						aniShow: 'pop-in'
+					},
+					styles: {
+						popGesture: 'hide'
+					},
+					waiting: {
+						autoShow: false
+					}
+				});
+			});
 	</script>
 </html>

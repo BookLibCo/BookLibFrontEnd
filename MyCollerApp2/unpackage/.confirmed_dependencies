@@ -4,7 +4,8 @@
 			"images/shuijiao.jpg",
 			"images/muwu.png",
 			"css/mui.min.css"
-		]
+		],
+		"refer": []
 	},
 	"index.html": {
 		"resources": [
@@ -18,6 +19,54 @@
 			"tab-webview-subpage-setting.html",
 			"tab-webview-subpage-chat.html",
 			"tab-webview-subpage-contact.html"
+		]
+	},
+	"tab-webview-subpage-setting.html": {
+		"resources": [
+			"css/mui.min.css",
+			"login.html"
+		],
+		"refer": [
+			"login.html"
+		]
+	},
+	"tab-webview-subpage-chat.html": {
+		"refer": [
+			"myinformation.html"
+		],
+		"resources": [
+			"css/mui.min.css"
+		]
+	},
+	"myinformation.html": {
+		"resources": [
+			"css/mui.min.css"
+		],
+		"refer": [
+			"im-chat.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"css/mui.min.css"
+		],
+		"refer": [
+			"reg.html"
+		]
+	},
+	"reg.html": {
+		"resources": [
+			"css/mui.min.css"
+		]
+	},
+	"im-chat.html": {
+		"resources": [
+			"css/mui.min.css"
+		]
+	},
+	"tab-webview-subpage-contact.html": {
+		"resources": [
+			"css/mui.min.css"
 		]
 	}
 }

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html class="ui-page-login">
-
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/mui.min.js"></script>
 		<style>
 			.ui-page-login,
 			body {
@@ -131,5 +131,112 @@
 		</div>
 		<script src="js/mui.min.js"></script>
 	</body>
-
+<script>
+			mui.init();
+			var mainPage = null;
+			mui.plusReady(function(){
+				mainPage = mui.preload({
+					"url": 'html/tab-webview-main.html',
+					"id": 'main'
+				});
+			})
+			
+			// 输入参数
+			var loginConfig = {
+				username: mui("#username")[0],
+				password: mui("#password")[0]
+			};		
+			
+			mui("#login")[0].addEventListener('tap',function(){
+				var username = loginConfig.username.value;
+				var password = loginConfig.password.value;
+				// 电话号码校验
+				if (!isMobile(username)){
+	                mui.toast("电话号码格式不正确");
+	                return;
+	            }
+				// 密码非空校验
+				if (!isEmpty(password)){
+					mui.toast('密码不能为空');
+					return;
+				}
+				
+				// 登录
+				var options = {
+		        	user : username,
+	                pwd : password,
+	                appKey : Easemob.im.config.appkey,
+				    success:function(data){
+				    	// console.log(JSON.stringify(data))
+				    	// mui.toast("成功登录");
+				        mui.fire(mainPage,'show',{
+			             	username:loginConfig.username.value,
+			             	password:loginConfig.password.value
+				      	});
+				        setTimeout(function() {
+							mui.openWindow({
+								id: 'main',
+								show: {
+									aniShow: 'pop-in'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+						}, 0);
+				    },
+				    error: function(e){
+				    	console.log(JSON.stringify(e))
+				    	mui.toast("成功失败:"+e.error_description);
+				    }
+				};
+				Easemob.im.Helper.login2UserGrid(options);
+			});
+			
+			// 注册页面
+			mui("#reg")[0].addEventListener('tap', function(event) {
+				mui.openWindow({
+					url: 'reg.html',
+					id: 'reg',
+					preload: true,
+					show: {
+						aniShow: 'pop-in'
+					},
+					styles: {
+						popGesture: 'hide'
+					},
+					waiting: {
+						autoShow: false
+					}
+				});
+			});
+			
+			// 退出的逻辑
+			var backButtonPress = 0;
+			mui.back = function(event) {
+				backButtonPress++;
+				if (backButtonPress > 1) {
+					plus.runtime.quit();
+				} else {
+					plus.nativeUI.toast('再按一次退出应用');
+				}
+				setTimeout(function() {
+					backButtonPress = 0;
+				}, 1000);
+				return false;
+			};
+			
+			// 是否为电话号码
+			function isMobile(value) {
+                var validateReg = /0?(13|14|15|18)[0-9]{9}/;
+				return validateReg.test(value);
+            }
+			
+			// 是否为空
+			function isEmpty(value){
+				var validateReg = /^\S+$/;
+				return validateReg.test(value);
+			}
+			
+		</script>
 </html>
